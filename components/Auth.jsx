@@ -4,6 +4,7 @@ import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { FaGoogle, FaMoon, FaSun } from "react-icons/fa";
 import { auth } from "../firebase";
 import useAuth from "../hooks/useAuth";
+import { mode } from '@chakra-ui/theme-tools';
 
 const Auth = (...props) => {
      const [isOpen, setIsOpen] = React.useState(false);
@@ -90,7 +91,7 @@ const Login = ({}) =>{
     const { isLoggedIn, user } = useAuth();
     return(
     <Box textAlign="right">
-                <Button onClick={() => toggleColorMode()}>
+                <Button onClick={() => toggleColorMode()}color="gray.500">
                     {colorMode == "dark" ? <FaSun /> : <FaMoon />}
                     
                 </Button>
@@ -127,10 +128,10 @@ const MenuLinks = ({ isOpen }) => {
         direction={["column", "column", "column", "row"]}
         pt={[4, 4, 0, 0]}
       >
-        <MenuItem to="/">Home</MenuItem>
-        <MenuItem to="/add-todo"> To Do </MenuItem>
-        <MenuItem to="/add-event"> Event </MenuItem>
-        <MenuItem to="/add-contact" isLast > Contacts</MenuItem>
+        <MenuItem color="gray.400" to="/">Home</MenuItem>
+        <MenuItem color="gray.400" to="/add-todo"> To Do </MenuItem>
+        <MenuItem color="gray.400" to="/add-event"> Event </MenuItem>
+        <MenuItem color="gray.400" to="/add-contact" isLast > Contacts</MenuItem>
       </Stack>
       
     </Box>
