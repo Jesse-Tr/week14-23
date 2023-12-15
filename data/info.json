@@ -1,0 +1,38 @@
+[
+    {
+        "nickname": "janey",
+        "email": "jane@coder.com",
+        "phone": "707-123-4567",
+        "birthdate": "04/01/1990",
+        "webSite": "janco.com",
+        "id": 1
+
+    },
+    {
+        "nickname": "jonny",
+        "email": "jon@coder.com",
+        "phone": "707-765-4321",
+        "birthdate": "05/10/1980",
+        "webSite": "jonnyboy.com",
+        "id": 2
+
+    },
+    {
+        "nickname": "GI JOE",
+        "email": "gi@joe.com",
+        "phone": "707-000-1122",
+        "birthdate": "01/11/2000",
+        "webSite": "ginjoe.com",
+        "id": 3
+
+    },
+    {
+        "nickname": "Dirty Harry",
+        "email": "Clint@eastwood.com",
+        "phone": "707-537-8008",
+        "birthdate": "12/21/2001",
+        "webSite": "www.Eastw00d.com",
+        "id": 4
+
+    }
+]

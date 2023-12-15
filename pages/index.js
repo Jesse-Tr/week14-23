@@ -1,32 +1,36 @@
-import { Box, Container, Divider, Flex, HStack, VStack, Text, Heading, SimpleGrid, } from "@chakra-ui/react";
-import Auth from "../components/Auth";
-import TodoList from "../components/TodoList";
-import EventList from "../components/EventList";
-import ContactList from "../components/ContactList"; 
-import React from "react"
-
-
-export default function Home(props) {
-    return (
-
-
-   
-
-        <Box mt={5}>
-        <SimpleGrid>
-        <Auth /> 
-        <TodoList />
-        <EventList />
-        <ContactList />
-       
-      </SimpleGrid> </Box>
+import Link from "next/link";
+import Layout from "../components/layout";
+import { getSortedList} from "../lib/data";
 
 
 
 
 
+// define a getStaticProps() function - this name is defined by next.js
+export async function getStaticProps() {
+  const allData = await getSortedList();
+  
 
+  return {
+    props: { allData } 
+  };
+}
 
-
-    )
-};
+// export our home page component Home
+export default function Home( {allData} ){
+  return(
+    <Layout home>
+      <h1>List of Names</h1>
+      <div className="list-group">
+        {allData.map(
+        ({id,name}) =>(
+          <Link key={id} href={`/${id}`} className="list-group-item list-group-action">
+            {name}
+            </Link>
+          )
+       )
+      }
+    </div>
+    </Layout>
+  );
+}
